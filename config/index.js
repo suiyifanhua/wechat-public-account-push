@@ -74,12 +74,15 @@ export const USER_CONFIG = {
       // 获取什么时候的星座运势，可选：['今日', '明日', '本周', '本月', '今年'], 留空则随机
       horoscopeDateType: '今日',
       // 他点击详情后跳转的页面,你可以设置成微博的热榜，也可以设置成其他，网址一定要填对；不填对也没关系，随便你，会打不开而已。
-      openUrl: "https://s.weibo.com/top/summary",
+      openUrl: "https://wangxinleo.cn",
       // 专属节日提醒，如果你在这里填写了节日提醒，就不会执行FESTIVALS的提醒了, 和FESTIVALS的配置方法相同，可以往下查看，我这里就不重复写了
       festivals: [
         // 注意：此条配置日期为阴历日期，因为`type`中 “生日” 之前有 * 符号
         {"type": "生日", "name": "晶晶", "year": "2000", "date": "04-20"},
         {"type": "节日", "name": "相识纪念日", "year": "2013", "date": "09-01"},
+        // 注意：此条配置日期为阳历日期，因为`type`中 “生日” 之前没有 * 符号
+        {"type": "生日", "name": "李四", "year": "1996", "date": "09-31"},
+        {"type": "节日", "name": "被搭讪纪念日", "year": "2021", "date": "09-01"},
       ],
       // 专属纪念日/倒数日，如果你在这里填写了纪念日/倒数日，就不会计算CUSTOMIZED_DATE_LIST的日子了, 和CUSTOMIZED_DATE_LIST的配置方法相同，可以往下查看，我这里就不重复写了
       customizedDateList: [
@@ -92,7 +95,7 @@ export const USER_CONFIG = {
       ]
     },
     {
-      name: "老婆1",
+      name: "晶晶",
       id: "",
       useTemplateId: "",
       province: "",
@@ -136,7 +139,7 @@ export const USER_CONFIG = {
    */
   
   // 【推送完成提醒】模板id, 用来看自己有没有发送成功的那个模板
-  CALLBACK_TEMPLATE_ID: "",
+  CALLBACK_TEMPLATE_ID: "DntYi24GXL1i0wycT07fvKI2xpuWR3l6vDyJSNaaHG8",
   
   // 接收成功回调消息的微信号，（一般来说只填自己的微信号, name填不填无所谓）
   CALLBACK_USERS: [
@@ -222,6 +225,8 @@ export const USER_CONFIG = {
    * 比如：keyword: "lover_prattle" ，在测试号中就是 {{ lover_prattle.DATA }}
    * */
   SLOT_LIST: [
+    // 这样配置的话，就会每次发送这句话
+    {"keyword": "encourage_oneself", contents: "你主要的问题在于读书太少而想得太多"},
     // 这样配置的话，就会每次随机选一句话发送
     {"keyword": "lover_prattle", contents: [
         "因为太喜欢你，所以看谁都像是情敌。",
